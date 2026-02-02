@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #726c6b,#726c6b);
+}
+
+
+.auth-container {
+  background: pink;
+  width: 960px;
+  min-height: 510px;
+  position: relative;
+  display: flex;
+  border-radius: 40px; 
+  overflow: hidden;
+  box-shadow: 0 0 40px#726c6b; 
+}
+
+
+
+.glass-effect {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color:#726c6b;
+}
+
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+  width: 50%;
+ background-color:#726c6b;
+  box-shadow: inset 0 0 10px#726c6b;
+  border-radius: 20px;
+}
+
+.sign-in-container {
+  left: 0;
+  z-index: 2;
+}
+
+.sign-up-container {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.auth-container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1;
+}
+
+.auth-container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 2;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.auth-container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: linear-gradient(to right,rgb(76, 33, 33));
+  color: #ffffff;
+  position: relative;
+  height: 100%;
+  width: 200%;
+  left: -100%;
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.auth-container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;     
+  padding: 2rem;
+  text-align: center;
+}
+
+.overlay-left {
+  transform: translateX(-3%);
+  left: 0;
+}
+
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.btn-teal {
+  background-color: rgb(76, 33, 33) !important;
+  color: #fff !important;
+  border: none;
+}
+
+.btn-teal:hover {
+  background-color: rgb(76, 33, 33)  !important;
+  color: #fff !important;
+}
+
+.helper-text {
+  display: none;
+  font-size: 0.875rem;
+}
